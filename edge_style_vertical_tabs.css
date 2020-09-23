@@ -1,6 +1,6 @@
 /*
 Author: t. Macleod Sawyer (@Drannex42) 
-Version: 1.0.2
+Version: 1.0.3
 Description: The following file attempts to recreate the Microsoft Edge style vertical tabs (that are currently in very limited alpha release) in the Vivaldi browser. I spent about four or so hours on this. 
 */ 
 
@@ -57,7 +57,7 @@ Description: The following file attempts to recreate the Microsoft Edge style ve
     border-color: var(--colorBgDarker) !important;
 }
 
-.application-icon {
+.tabs-left .application-icon {
     position: fixed;
     left: 0;
     top: 0;
@@ -66,13 +66,13 @@ Description: The following file attempts to recreate the Microsoft Edge style ve
     padding-top: 6px;
 }
 
-.color-behind-tabs-off .topmenu button.vivaldi-horizontal-icon span.application-icon {
+.tabs-left .color-behind-tabs-off .topmenu button.vivaldi-horizontal-icon span.application-icon {
     display: block;
     padding-left: 7px !important;
     padding-bottom: 0;
 }
 
-.color-behind-tabs-off .topmenu .menubar.horizontal {
+.tabs-left .color-behind-tabs-off .topmenu .menubar.horizontal {
     margin-left: 30px;
 }
 
@@ -244,253 +244,6 @@ Description: The following file attempts to recreate the Microsoft Edge style ve
     content: "New Tab";
     display: inline-block;
     width: 100%;
-    margin-top: -2px;
-    padding-left: 5px;
-}
-
-.bookmark-bar {
-    padding-left: 4px;
-}
-
-.sync-and-trash-container {
-    width: 100%;
-    position: relative;
-    bottom: 45px;
-    padding: 11px;
-    text-align: left;
-    justify-content: left !important;
-}
-
-#tabs-container:hover .sync-and-trash-container .toggle-trash button span::after {
-    content: "Trash";
-    display: inline-block;
-    margin-top: 4px;
-    padding-left: 5px;
-}
-.tabs-left #main {
-        margin-left: 50px;
-}
-
-.tabs-right #main {
-    margin-right: 50px;
-}
-
-.tabs-right #header .window-buttongroup {
-    margin-right: 50px;
-    z-index: 99 !important;
-} 
-
-.tabs-right .UrlBar {
-    padding-right: 2px;
-}
-
-#main .inner {
-    position: relative; 
-}
-
-.tabs-left #browser:not(.tabs-top) .vivaldi {
-    height: 30px;
-    padding: 0;
-    margin-left: 8px;
-    padding-bottom: 10px !important;
-    margin-top: 5px !important;
-    z-index: 99999999;
-}
-
-.tabs-left .topmenu button.vivaldi-horizontal-icon {
-    z-index: 999;
-    padding-right: 15px;
-    padding-left: 7px;
-}
-
-.tabs-left .topmenu button.vivaldi-horizontal-icon svg {
-    width: 20px;
-    height: 20px;
-    margin-left: 7.5px;
-}
-
-#tabs-container {
-    border-color: var(--colorBgDarker) !important;
-}
-
-.application-icon {
-    position: fixed;
-    left: 0;
-    top: 0;
-    background: var(--colorBg);
-    padding: 14px;
-    padding-top: 6px;
-}
-
-#tabs-container {
-    z-index: 9 !Important;
-}
-
-#tabs-container.left:hover,
-#tabs-container.right:hover {
-    position: fixed;
-    left: 0;
-    z-index: 9999999;
-    color: var(--colorFg);
-    background-color: var(--colorBg);
-    height: 100%;
-    top: 0;
-    width: 250px !important;
-    padding-top: 25px;
-}
-
-#tabs-container.right:hover {
-    right: 0px !important;
-    left: auto !important;
-}
-#tabs-container.left:not(:hover),
-#tabs-container.right:not(:hover) {
-    width: 50px !important;
-    height: 100%;
-    position: fixed;
-    background-color: var(--colorBg);
-    top: 0;
-    left: 0;
-    padding-top: 25px;
-}
-
-#tabs-container.right:not(:hover) {
-    right: 0px !important;
-    left: auto !important;
-}
-
-
-#tabs-container.left {
-    left: 0;
-}
-#tabs-container.right {
-    right: 0;
-}
-
-.tab-strip {
-    padding: 10px !important;
-}
-
-.tab-position {
-    position: absolute;
-    max-height: 100%;
-    max-width: 100%;
-    display: flex;
-    height: auto !important;
-    position: relative !important;
-    overflow: visible !important;
-}
-
-.tab-position .tab {
-    max-height: 100%;
-    max-width: 100%;
-    display: flex;
-    padding: 5px !important;
-    border: 1px solid transparent !important;
-    border-radius: calc(var(--radius)) !important;
-    height: auto !important;
-    position: relative !important;
-    overflow: visible !important;
-    margin-bottom: -20px !important;
-    font-size: 13px;
-    background: none !important;
-}
-
-.tab-position .tab:hover {
-    background: var(--colorBgDarker) !important;
-}
-.tab-position .tab.active {
-    background-color: var(--colorBgLighter) !important;
-    color: var(--colorFg);
-    border: 1px solid var(--colorBgDarker) !important;
-    box-shadow: 0px 5px 10px var(--colorBgDarker) !important;
-}
-
-#browser:not(.ui-transparent-tabs) .tab-position .tab:hover:not(.active) {
-    background-color: var(--colorBgDarker);
-}
-
-
-.tab-position .tab .tab-header {
-    padding: 0 !important;
-    margin: 0 !important;
-    flex: none !Important;
-}
-
-.tab-position .tab .favicon {
-    pointer-events: none;
-    flex: 0 0 18px;
-    border-radius: var(--radiusRounded);
-    min-width: 20px;
-    height: 20px;
-    padding: 1px;
-    filter: unset;
-}
-
-.tab-position .tab .favicon svg {
-    width: 20px;
-    height: 20px;
-}
-
-
-.tab-position .tab .title {
-    -webkit-mask-image: -webkit-linear-gradient(180deg, transparent 0, var(--colorBg) 25px);
-    -webkit-mask-position: right;
-    margin-top: -2px;
-    padding-left: 8px;
-}
-
-#browser:not(.alt-tabs) #tabs-container .close {
-    margin-right: 6px;
-    margin: 0;
-    margin-top: 1px;
-}
-
-.tab-position .tab .close svg {
-    margin: auto;
-    color: var(--colorAccentBgDarker);
-}
-.tab-position .tab .close svg:hover {
-    color: var(--colorFg);
-}
-
-.tab-position .tab .close {
-    display: flex;
-    background: none;
-}
-
-#tabs-container .tab.isdiscarded .favicon {
-    filter: none;
-}
-
-
-
-.button-toolbar.newtab {
-    border-top: 1px solid var(--colorBgDarker);
-    padding-top: 5px !important;
-    left: 0 !important;
-    flex: none !important;
-    display: inline-block !important;
-    width: 100% !important;
-}
-
-.toolbar-tabbar .newtab > button {
-    width: 100%;
-}
-
-.toolbar-tabbar .newtab > button::hover {
-    cursor: pointer;
-}
-.toolbar-tabbar .newtab > button svg {
-    height: 30px;
-    width: 30px;
-}
-
-#tabs-container:hover .toolbar-tabbar .newtab > button::after {
-    content: "New Tab";
-    display: inline-block;
-    width: 100%;
-    color: #000;
     margin-top: -2px;
     padding-left: 5px;
 }
