@@ -14,4 +14,4 @@ I also made sure that they would work with any themes and look visually similar 
 
 I also went ahead and tested horizontal menus and the different application icons to make sure they all line up properly.
 
-![](https://forum.vivaldi.net/assets/uploads/files/1600817577397-newgcffyll.gif)
+![](https://github.com/drannex42/vivaldi-mods/blob/master/vivaldi_vertical_tab_preview.gif?raw=true)
