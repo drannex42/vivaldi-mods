@@ -1,6 +1,6 @@
 /*
 Author: t. Macleod Sawyer (@Drannex42) 
-Version: 1.0.6
+Version: 1.0.7
 Description: The following file attempts to recreate the Microsoft Edge style vertical tabs (that are currently in very limited alpha release) in the Vivaldi browser. I spent about four or so hours on this. 
 */ 
 
@@ -286,4 +286,142 @@ Description: The following file attempts to recreate the Microsoft Edge style ve
     display: inline-block;
     margin-top: 4px;
     padding-left: 5px;
+}
+
+/*
+Drop-Down Tab Stacks based on LonM.vivaldi.net (but heavily modified)
+*/
+
+.tab-group-indicator {
+    width: 101%;
+}
+
+#tab-container:not(:hover) .tab-group-indicator .tab-indicator {
+    margin-right: 1px !important;
+    margin-left: 1px !important;
+}
+
+/* Make the tab group indicator vertical below tab header */
+.tab-group:hover .tab-group-indicator {
+  flex-direction: column;
+  position: relative;
+}
+
+
+.tab-indicator {
+    margin-right: 2px !important;
+}
+
+/* Space tab indicators vertically */
+.tab-group:hover .tab-indicator {
+  height: 30px !important;
+  margin-top: 2px;
+  flex: none !important;
+  top: -26px;
+  border: none !important;
+}
+
+/* Background (shape) of tab indicator */
+.tab-group:hover .tab-indicator:before {
+  content: '';
+  background: var(--colorBgInverser);
+  display: flex;
+  height: 23px;
+  width: 100%;
+  border-radius: var(--radiusHalf);
+}
+
+.tab-group:hover .tab-indicator.active:before {
+    background: var(--colorAccentBg);
+}
+
+/* Foreground (text) of tab indicator */
+.tab-group:hover .tab-indicator:after {
+  content: attr(title);
+  display: block;
+  width: 90%;
+  position: relative;
+  top: -20px;
+  left: 8px;
+  color: var(--colorFg);
+  white-space: nowrap;
+  overflow: hidden;
+  /** Toggle for fade out long text */
+  -webkit-mask-image: -webkit-linear-gradient(180deg, transparent 0, #fff 16px);
+  -webkit-mask-position: top right;
+  /*  or clip with ... */
+  /*text-overflow: ellipsis;*/
+}
+
+.tab-group:hover .tab-indicator {
+  background: transparent !important;
+  cursor: pointer;
+}
+
+/* Highlight Currently selected tab group indicator */
+.tab-group:hover .tab-indicator.active {
+  height: 26px;
+  width: 100%;
+  border-bottom: none !important;
+  border-radius: var(--radiusHalf);
+  background: transparent !important;
+}
+
+/* Change active indicator colours */
+.tab-group:hover .tab-indicator:hover:before {
+  background: var(--colorAccentBg);
+}
+.tab-group:hover .tab-indicator:hover:after {
+  color: var(--colorHighlightFg);
+}
+
+/* different tab positions */
+.tabs-right .tab-group:hover .tab-group-indicator,
+.tabs-left  .tab-group:hover .tab-group-indicator{
+  top: 30px !important;
+  bottom: unset !important;
+}
+.tabs-right .tab-group:hover .tab-group-indicator:before,
+.tabs-left  .tab-group:hover .tab-group-indicator:before{
+  top: 0;
+}
+
+.tabs-top .tab-group:hover .tab-group-indicator{
+  top: 26px !important;
+  bottom: unset !important;
+  left: -6px;
+}
+.tabs-top .tab-group:hover .tab-group-indicator:before {
+  top: -30px;
+  bottom: unset !important;
+  left: 6px;
+  width: calc(100% - 10px);
+}
+
+.tabs-bottom .tab-group:hover .tab-group-indicator{
+  top: unset !important;
+  bottom: 26px !important;
+}
+.tabs-bottom .tab-group:hover .tab-group-indicator:before {
+  top: unset !important;
+  bottom: -30px;
+}
+
+/* Prevent side tabs z-index upsetting the
+ layering of the tab group indicators */
+.tabs-right .tab-position:hover,
+.tabs-left  .tab-position:hover {
+  z-index: 3 !important;
+}
+
+.tab-indicator {
+    flex: 1 1 100%;
+    border-top: 3px solid transparent;
+    border-bottom: none;
+    background-clip: content-box;
+    position: relative;
+    margin-right: 5px;
+    border-color: #ccc;
+    height: 2px !important;
+    top: -1px;
 }
