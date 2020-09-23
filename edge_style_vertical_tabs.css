@@ -1,6 +1,6 @@
 /*
 Author: t. Macleod Sawyer (@Drannex42) 
-Version: 1.0.5
+Version: 1.0.6
 Description: The following file attempts to recreate the Microsoft Edge style vertical tabs (that are currently in very limited alpha release) in the Vivaldi browser. I spent about four or so hours on this. 
 */ 
 
@@ -188,14 +188,17 @@ Description: The following file attempts to recreate the Microsoft Edge style ve
     flex: 0 0 18px;
     border-radius: var(--radiusRounded);
     min-width: 20px;
-    height: 20px;
     padding: 1px;
     filter: unset;
 }
 
 .tab-position .tab .favicon svg {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
+}
+
+.theme-dark .tab-position .tab.active .tab-header .favicon:not(.svg) {
+    filter: none !important;
 }
 
 
@@ -204,6 +207,10 @@ Description: The following file attempts to recreate the Microsoft Edge style ve
     -webkit-mask-position: right;
     margin-top: -2px;
     padding-left: 8px;
+}
+
+.tab-strip .tab-position-of-type {
+    margin-bottom: 40px;
 }
 
 #browser:not(.alt-tabs) #tabs-container .close {
@@ -238,6 +245,7 @@ Description: The following file attempts to recreate the Microsoft Edge style ve
     flex: none !important;
     display: inline-block !important;
     width: 100% !important;
+    margin-top: 0px;
 }
 
 .toolbar-tabbar .newtab > button {
