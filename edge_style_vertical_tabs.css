@@ -1,6 +1,6 @@
 /*
 Author: t. Macleod Sawyer (@Drannex42) 
-Version: 1.1.1
+Version: 1.1.2
 Description: The following file attempts to recreate the Microsoft Edge style vertical tabs (that are currently in very limited alpha release) in the Vivaldi browser. I spent about four or so hours on this. 
 */ 
 
@@ -9,6 +9,7 @@ Description: The following file attempts to recreate the Microsoft Edge style ve
 
 v1.0.1-1.1.0: Fixed tab positioning, roundness, notification icons, audio icons, improved theme colouring, tab overflow, scrolling, vivaldi/menu icons, and many other. 
 v1.1.1: Added tab thumbnails (when enabled in settings) and the appropriate tab positions. 
+v1.1.2: Fixed favicon svg on internal pages on light themes.
 */
 
 .tabs-left #main {
@@ -92,7 +93,7 @@ v1.1.1: Added tab thumbnails (when enabled in settings) and the appropriate tab 
     position: fixed;
     left: 0;
     z-index: 9999999;
-    color: var(--colorFg);
+    color: var(--colorFg) !important;
     background-color: var(--colorBg);
     height: 100%;
     top: 0;
@@ -174,7 +175,7 @@ v1.1.1: Added tab thumbnails (when enabled in settings) and the appropriate tab 
 }
 .tab-position .tab.active {
     background-color: var(--colorBgLighter) !important;
-    color: var(--colorFg);
+    color: var(--colorFg) !important;
     border: 1px solid var(--colorBgDarker) !important;
     box-shadow: 0px 5px 10px var(--colorBgDarker) !important;
 }
