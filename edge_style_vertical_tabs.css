@@ -1,6 +1,6 @@
 /*
 Author: t. Macleod Sawyer (@Drannex42) 
-Version: 1.0.9
+Version: 1.1.0
 Description: The following file attempts to recreate the Microsoft Edge style vertical tabs (that are currently in very limited alpha release) in the Vivaldi browser. I spent about four or so hours on this. 
 */ 
 
@@ -306,6 +306,15 @@ Description: The following file attempts to recreate the Microsoft Edge style ve
     padding: 0px !important;
     border-radius: var(--radiusRound);
     position: fixed;
+}
+
+.tab-position .tab .tab-selection {
+    position: absolute;
+    pointer-events: none;
+    border-radius: var(--radiusHalf);
+    top: 0px;
+    z-index: 999999;
+    left: 0px;
 }
 
 #browser:not(.alt-tabs) #tabs-container .tab:not(.pinned):not(.tab-small).audio-on .favicon, #browser:not(.alt-tabs) #tabs-container .tab:not(.pinned):not(.tab-small).audio-muted .favicon, #browser:not(.alt-tabs) #tabs-container .tab:not(.pinned):not(.tab-small).tab-captured .favicon {
