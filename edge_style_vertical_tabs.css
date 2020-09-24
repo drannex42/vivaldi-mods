@@ -10,7 +10,7 @@ Description: The following file attempts to recreate the Microsoft Edge style ve
 v1.0.1-1.1.0: Fixed tab positioning, roundness, notification icons, audio icons, improved theme colouring, tab overflow, scrolling, vivaldi/menu icons, and many other. 
 v1.1.1: Added tab thumbnails (when enabled in settings) and the appropriate tab positions. 
 v1.1.2: Fixed favicon svg on internal pages on light themes.
-v1.1.3: Fixed close button colors to better match themes. 
+v1.1.3: Fixes the coloring on the close buttons, no longer attached to the accent of the window, but on the foreground lightest color. This tends to be far less jarring.
 */
 
 .tabs-left #main {
