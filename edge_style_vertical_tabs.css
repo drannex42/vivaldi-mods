@@ -2,8 +2,8 @@
   
 /*
 Author: t. Macleod Sawyer (@Drannex42) 
-Version: 1.1.7
-Description: The following file attempts to recreate (and heavily improve!) the Microsoft Edge style vertical tabs (that are currently in very limited alpha release) in the Vivaldi browser. I spent about four or so hours on this. 
+Version: 1.1.8
+Description: The following file attempts to recreate (and heavily improve!) the Microsoft Edge style vertical tabs (that are currently in very limited alpha release) in the Vivaldi browser.
 URL: https://github.com/drannex42/vivaldi-mods/blob/master/edge_style_vertical_tabs.css
 */ 
 
@@ -17,7 +17,13 @@ v1.1.4: Added hibernate (.isdiscarded) class (dims tab - if you change this opti
 v1.1.5: Minor update, notification badge has better positioning and padding.
 v1.1.6: Fixed fullscreen bug on some monitors as reported by /u/Tsopek on reddit, also added label to the synced tags button on the toolbar, fixed the overflow overlay, and the overflow scrollbar appearing in some cases when not hovered.
 v1.1.7: Removed absolute positioning on tabs, and made the new tab button sticky to the bottom of the overflow tab container! 
+v1.1.8: Realigned new tab button to be alongside the trash and sync buttons (when tab overflow happens), added config section below, fixed trash & sync svg sizes
 */
+
+/* CONFIG: {
+    | STATUSBAR: If you use do not use the status bar (or use the overlay statusbar) please uncomment the following line: */
+      /*   .sync-and-trash-container{ margin-top: 19px !important; } */
+/* } */ 
 
 .tabs-left #main {
         margin-left: 50px;
@@ -142,7 +148,7 @@ v1.1.7: Removed absolute positioning on tabs, and made the new tab button sticky
 }
 
 .tab-strip {
-    max-height: 85%;
+    max-height: calc(100%);
     display: block;
     margin-bottom: 50px;
     padding: 10px !important;
@@ -297,7 +303,7 @@ v1.1.7: Removed absolute positioning on tabs, and made the new tab button sticky
     content: "New Tab";
     display: inline-block;
     width: 100%;
-    margin-top: -2px;
+    margin-top: 0px;
     padding-left: 5px;
 }
 
@@ -307,33 +313,48 @@ v1.1.7: Removed absolute positioning on tabs, and made the new tab button sticky
 
 .sync-and-trash-container {
     width: 100%;
-    position: relative;
-    bottom: 45px;
+    position: sticky;
+    bottom: 0px;
     padding: 11px;
     text-align: left;
     justify-content: left !important;
+    padding-bottom: 5px;
+    margin-top: 41px;
+}
+
+#tabs-container:hover .sync-and-trash-container {
+    padding-right: 0;
 }
 
 .synced-tabs-button {
     display: block;
     width: 100%;
+    margin-bottom: -2px;
 }
+
+.sync-and-trash-container .toggle-trash button span svg {
+    height: 29px;
+    width: 28px;
+}
+ .sync-and-trash-container .synced-tabs-button button span svg {
+    height: 29px;
+    width: 28px;
+ }
+
 
 #tabs-container:hover .sync-and-trash-container .toggle-trash button span::after {
     content: "Trash";
     display: inline-block;
     margin-top: 7px;
-    padding-left: 5px;
-    font-size: 12px;
+    padding-left: 8px;
     cursor: pointer;
 }
 
 #tabs-container:hover .sync-and-trash-container .synced-tabs-button span::after {
     content: "Sync";
     display: inline-block;
-    margin-top: 6px;
-    padding-left: 5px;
-    font-size: 12px;
+    margin-top: 7px;
+    padding-left: 8px;
     cursor: pointer;
 }
 
@@ -522,7 +543,3 @@ Drop-Down Tab Stacks based on LonM.vivaldi.net (but heavily modified)
     background-position: top right !important;
     background-repeat: no-repeat !important;
 }
-
-
-/* HMMMM /*
-
