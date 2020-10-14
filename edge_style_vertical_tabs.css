@@ -2,7 +2,7 @@
   
 /*
 Author: t. Macleod Sawyer (@Drannex42) 
-Version: 1.1.6
+Version: 1.1.7
 Description: The following file attempts to recreate (and heavily improve!) the Microsoft Edge style vertical tabs (that are currently in very limited alpha release) in the Vivaldi browser. I spent about four or so hours on this. 
 URL: https://github.com/drannex42/vivaldi-mods/blob/master/edge_style_vertical_tabs.css
 */ 
@@ -16,6 +16,7 @@ v1.1.3: Fixes the coloring on the close buttons, no longer attached to the accen
 v1.1.4: Added hibernate (.isdiscarded) class (dims tab - if you change this option in settings, browser restart required), added unread tab indicator. Thanks @Ararararagi for pointing out these needed features! 
 v1.1.5: Minor update, notification badge has better positioning and padding.
 v1.1.6: Fixed fullscreen bug on some monitors as reported by /u/Tsopek on reddit, also added label to the synced tags button on the toolbar, fixed the overflow overlay, and the overflow scrollbar appearing in some cases when not hovered.
+v1.1.7: Removed absolute positioning on tabs, and made the new tab button sticky to the bottom of the overflow tab container! 
 */
 
 .tabs-left #main {
@@ -160,6 +161,8 @@ v1.1.6: Fixed fullscreen bug on some monitors as reported by /u/Tsopek on reddit
     height: auto !important;
     position: relative !important;
     overflow: visible !important;
+    top: auto !important;
+    margin-bottom: 30px;
 }
 
 .tab-position .tab {
@@ -266,7 +269,16 @@ v1.1.6: Fixed fullscreen bug on some monitors as reported by /u/Tsopek on reddit
     flex: none !important;
     display: inline-block !important;
     width: 100% !important;
-    margin-top: 0px;
+    top: auto !important;
+}
+
+.resize .tab-strip .toolbar-tabbar {
+    z-index: 999999;
+    background: var(--colorBg);
+    position: sticky;
+    bottom: -30px;
+    padding-bottom: 20px;
+}
 }
 
 .toolbar-tabbar .newtab > button {
@@ -310,7 +322,7 @@ v1.1.6: Fixed fullscreen bug on some monitors as reported by /u/Tsopek on reddit
 #tabs-container:hover .sync-and-trash-container .toggle-trash button span::after {
     content: "Trash";
     display: inline-block;
-    margin-top: 6px;
+    margin-top: 7px;
     padding-left: 5px;
     font-size: 12px;
     cursor: pointer;
@@ -356,14 +368,6 @@ v1.1.6: Fixed fullscreen bug on some monitors as reported by /u/Tsopek on reddit
     filter: brightness(.8) contrast(.8) opacity(0.65);
 }
 
-
-/* Since tab position is dictated via an absolute positioning system, when you have tab thumbnails turned on it skews the position. This corrects them. */ 
-
-
-#tabs-container.view-thumbs:not(:hover) .tab-strip .tab-position {
-    margin-bottom: -118px !important;
-}
-
 #tabs-container.view-thumbs .tab-strip .thumbnail-image {
     display: none !important;
 }
@@ -371,10 +375,6 @@ v1.1.6: Fixed fullscreen bug on some monitors as reported by /u/Tsopek on reddit
 #tabs-container.view-thumbs:hover .tab-strip .thumbnail-image {
     margin-top: 5px !important;
     display: block !Important;
-}
-
-#tabs-container.view-thumbs:hover .tab-position .tab {
-    margin-bottom: -142px !important;
 }
 
 #browser:not(.alt-tabs) #tabs-container .tab:not(.pinned):not(.tab-small).audio-on .favicon, #browser:not(.alt-tabs) #tabs-container .tab:not(.pinned):not(.tab-small).audio-muted .favicon, #browser:not(.alt-tabs) #tabs-container .tab:not(.pinned):not(.tab-small).tab-captured .favicon {
@@ -522,3 +522,7 @@ Drop-Down Tab Stacks based on LonM.vivaldi.net (but heavily modified)
     background-position: top right !important;
     background-repeat: no-repeat !important;
 }
+
+
+/* HMMMM /*
+
