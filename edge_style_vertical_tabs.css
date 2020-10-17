@@ -2,8 +2,8 @@
   
 /*
 Author: t. Macleod Sawyer (@Drannex42) 
-Version: 1.1.8
-Description: The following file attempts to recreate (and heavily improve!) the Microsoft Edge style vertical tabs (that are currently in very limited alpha release) in the Vivaldi browser.
+Version: 1.1.9
+Description: The following file attempts to recreate (and heavily improve!) the Microsoft Edge style vertical tabs (that are currently in very limited alpha release) in the Vivaldi browser. I spent about four or so hours on this. 
 URL: https://github.com/drannex42/vivaldi-mods/blob/master/edge_style_vertical_tabs.css
 */ 
 
@@ -18,6 +18,7 @@ v1.1.5: Minor update, notification badge has better positioning and padding.
 v1.1.6: Fixed fullscreen bug on some monitors as reported by /u/Tsopek on reddit, also added label to the synced tags button on the toolbar, fixed the overflow overlay, and the overflow scrollbar appearing in some cases when not hovered.
 v1.1.7: Removed absolute positioning on tabs, and made the new tab button sticky to the bottom of the overflow tab container! 
 v1.1.8: Realigned new tab button to be alongside the trash and sync buttons (when tab overflow happens), added config section below, fixed trash & sync svg sizes
+v1.1.9: Fixed tab stack visual (better alignment of tab indicators).
 */
 
 /* CONFIG: {
@@ -278,6 +279,10 @@ v1.1.8: Realigned new tab button to be alongside the trash and sync buttons (whe
     top: auto !important;
 }
 
+.button-toolbar.newtab button {
+    width: 100%;
+}
+
 .resize .tab-strip .toolbar-tabbar {
     z-index: 999999;
     background: var(--colorBg);
@@ -408,13 +413,22 @@ Drop-Down Tab Stacks based on LonM.vivaldi.net (but heavily modified)
 */
 
 .tab-group-indicator {
-    width: 101%;
+    width: 100%;
 }
 
 #tab-container:not(:hover) .tab-group-indicator .tab-indicator {
     margin-right: 1px !important;
     margin-left: 1px !important;
 }
+
+.tab-group-indicator div:last-of-type {
+    margin-right: -2px !important;
+}
+
+.tab-group-indicator div:first-of-type {
+    margin-left: -1px !important;
+}
+
 
 /* Make the tab group indicator vertical below tab header */
 .tab-group:hover .tab-group-indicator {
@@ -532,7 +546,7 @@ Drop-Down Tab Stacks based on LonM.vivaldi.net (but heavily modified)
     border-bottom: none;
     background-clip: content-box;
     position: relative;
-    margin-right: 5px;
+    margin: 0 1px !important;
     border-color: #ccc;
     height: 2px !important;
     top: -1px;
