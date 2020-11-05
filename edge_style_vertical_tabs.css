@@ -47,9 +47,9 @@ v1.2.0: Centered (vertically and horizontally) the tab title in the header bar a
     margin-top: 8px;
 }
 
-.topmenu .menubar-horizontal {
+.topmenu .menubar.horizontal {
     background: var(--colorBg);
-    z-index: 99999;
+    z-index: 99999 !important;
 }
 
 .tabs-right #header .window-buttongroup {
