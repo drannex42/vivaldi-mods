@@ -44,7 +44,7 @@ v1.2.0: Centered (vertically and horizontally) the tab title in the header bar a
     position: absolute;
     width: 100%;
     z-index: 1;
-    margin-top: 9px;
+    margin-top: 8px;
 }
 
 .topmenu .menubar-horizontal {
