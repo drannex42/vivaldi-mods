@@ -19,8 +19,8 @@ v1.1.6: Fixed fullscreen bug on some monitors as reported by /u/Tsopek on reddit
 v1.1.7: Removed absolute positioning on tabs, and made the new tab button sticky to the bottom of the overflow tab container! 
 v1.1.8: Realigned new tab button to be alongside the trash and sync buttons (when tab overflow happens), added config section below, fixed trash & sync svg sizes
 v1.1.9: Fixed tab stack visual (better alignment of tab indicators).
-v1.2.0: Centered (vertically and horizontally) the tab title in the header bar at the top of the window when you have the horizontal menu enabled.
 v1.2.1: Updates for latest vivaldi snapshot changes: added styling for additional tabbar container, readded border width, added removal of the new tab bar container width, fixed sync and trash container from being offset.  
+
 */
 
 /* CONFIG: {
@@ -240,6 +240,7 @@ v1.2.1: Updates for latest vivaldi snapshot changes: added styling for additiona
     padding: 1px;
     filter: unset;
     color: var(--colorFg);
+    text-align: center;
 }
 
 .tab-position .tab .favicon svg {
