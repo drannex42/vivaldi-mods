@@ -21,7 +21,7 @@ v1.1.8: Realigned new tab button to be alongside the trash and sync buttons (whe
 v1.1.9: Fixed tab stack visual (better alignment of tab indicators).
 v1.2.1: Updates for latest vivaldi snapshot changes: added styling for additional tabbar container, readded border width, added removal of the new tab bar container width, fixed sync and trash container from being offset.  
 v1.2.2: Flipped the close button and the favicon for users who use this on the right side of the screen.
-v1.1.3: Updated tab selection svg size/border as latest vivaldi changed how they handled tab selections . 
+v1.2.3: Updated the tab selection svg size/border positioning as latest vivaldi changed how they handled tab selections .
 */
 
 /* CONFIG: {
