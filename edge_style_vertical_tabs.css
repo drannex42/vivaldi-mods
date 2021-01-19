@@ -2,7 +2,7 @@
   
 /*
 Author: t. Macleod Sawyer (@Drannex42) 
-Version: 1.2.4
+Version: 1.2.5
 Description: The following file attempts to recreate (and heavily improve!) the Microsoft Edge style vertical tabs (that are currently in very limited alpha release) in the Vivaldi browser. I spent about four or so hours on this. 
 URL: https://github.com/drannex42/vivaldi-mods/blob/master/edge_style_vertical_tabs.css
 */ 
@@ -23,6 +23,7 @@ v1.2.1: Updates for latest vivaldi snapshot changes: added styling for additiona
 v1.2.2: Flipped the close button and the favicon for users who use this on the right side of the screen.
 v1.1.3: Updated tab selection svg size/border as latest vivaldi changed how they handled tab selections . 
 v2.1.4: Fixed new tab position and sync and trash container config 
+v2.1.5: Latest Vivaldi Snapshop updates added a new transform property to the tab position class, I have removed that and added an importance tag to the new tab button to override. 
 */
 
 /* CONFIG: {
@@ -103,6 +104,7 @@ v2.1.4: Fixed new tab position and sync and trash container config
 #tabs-container {
     border-color: var(--colorBgDarker) !important;
     border-width: 1px;
+    z-index: 99999999 !important;
 }
 
 #tabs-tabbar-container {
@@ -205,6 +207,7 @@ v2.1.4: Fixed new tab position and sync and trash container config
     overflow: visible !important;
     top: auto !important;
     margin-bottom: 30px;
+    transform: none !important;
 }
 
 .tab-position .tab {
@@ -322,7 +325,7 @@ v2.1.4: Fixed new tab position and sync and trash container config
 .resize .tab-strip .toolbar-tabbar {
     z-index: 999999;
     background: var(--colorBg);
-    position: sticky;
+    position: sticky !important;
     bottom: -30px;
     padding-bottom: 20px;
 }
