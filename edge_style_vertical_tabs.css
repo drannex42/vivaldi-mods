@@ -109,9 +109,16 @@ v1.2.8: Latest versions of vivaldi added a new container to the tab-bar, this re
     width: 0 !important;
     position: fixed;
     top: 0;
-    left: 0;
     height: 100%;
     z-index: 99999999;
+}
+
+#tabs-tabbar-container.left {
+    left: 0;
+}
+
+#tabs-tabbar-container.right {
+    right: 0;
 }
 
 .tabs-left.application-icon {
