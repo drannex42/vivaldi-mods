@@ -27,6 +27,7 @@ v1.2.5: Latest Vivaldi Snapshop updates added a new transform property to the ta
 v1.2.6: Removed config settings, as they are no longer needed!
 v1.2.7: Made future editing easier, by forcing the tab width to the size of the tab-container.
 v1.2.8: Latest versions of vivaldi added a new container to the tab-bar, this removes it (in a way) and allows for panels to be resized again.
+v1.2.9: Added hover delay (Thanks to u/TwisterMc!)
 */
 
 .tabs-left #main {
